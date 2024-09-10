@@ -1,0 +1,49 @@
+.title {
+    text-align: center;
+    display: grid;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.image {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.login {
+    display: grid;
+    justify-content: center;
+    font-size: 24px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.description {
+    display: grid;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ig {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+.button {
+    display: grid;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: red; /* Darker green on hover */
+}

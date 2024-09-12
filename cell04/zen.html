@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen</title>
+    <script src="https://kit.fontawesome.com/64c9199a72.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            position: fixed;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            background-color: black;
+            z-index: 1;
+            justify-content: space-between;
+        }
+        #navtext {
+            display: flex;
+            align-self: center;
+            padding-right: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            text-decoration: none;
+        }
+        .navtext-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .home-icon {
+            line-height: 70px;
+            margin-left: 40px;
+            font-size: 20px;
+            color: white;
+        }
+        .header {
+            text-align: left; 
+            margin-bottom: 45px;
+            line-height: .5;
+            margin-left: 30px;
+            font-family:'Courier New', Courier, monospace;
+            color:black;
+        }
+        .skills {
+            display: block; 
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px;
+        }
+        .image1 {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .image1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("assetz/background.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.3; /* Adjust this value to control the opacity */
+            z-index: -1; /* Ensure it stays behind the content */
+        }
+        
+        .block {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image2 {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("assetz/background.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.3; /* Adjust this value to control the opacity */
+            z-index: -1; /* Ensure it stays behind the content */
+        }
+        .foot {
+            display: flex;
+            height: 70px;
+            background-color: black;
+            justify-content: start;
+            align-self: center;
+            gap: 40px;
+            padding-left: 40px;
+        }
+        #foottext {
+            display: flex;
+            align-self: center;
+            color: white;
+        }
+        
+        @media only screen {
+            .parallax {
+              background-attachment:fixed;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <a class="home-icon" href="https://www.google.co.th/">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <div class="navtext-container">
+            <a id="navtext" href="#main">Profile</a>
+            <a id="navtext" href="#skills">Skills</a>
+            <a id="navtext" href="#about">About</a>
+            <a id="navtext" href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="image1" id="main">
+        <span class="header">
+            <h1>Profile Card</h1>
+            <h3>kokritne</h3>
+            <p>#funwithcodingsep2024</p>
+            <img src="assetz/profile.jpg" style="width: 370px;">
+            <h2>Koobun Kritnetithat</h2>
+            <p>2nd Year Student</p>
+            <p>School of Information Technology KMITL</p>
+        </span>
+    </div>
+
+    <div class="block" id="skills">
+        <div class="skills">
+            <p>Skills</p>
+            <li>HTML</li>
+            <hr>
+            <li>CSS</li>
+            <hr>
+            <li>Python</li>
+            <hr>
+            <li>Java</li>
+        </div>
+    </div>
+
+    <div class="image2" id="about">
+        <p>Little bit about myself</p>
+        <div id="contact">
+            instalink
+        </div>
+    </div>
+
+    <div class="foot" id="contact">
+            <a id="foottext" href="https://www.instagram.com/zenkoub/">IG</a>
+            <a id="foottext" href="https://www.facebook.com/profile.php?id=100006579403577">FB</a>
+            <a id="foottext" href="https://github.com/zenkoub">github</a>
+            <a id="foottext" href="mailto:66070024@kmitl.ac.th">Gmail</a>
+    </div>
+
+</body>
+</html>

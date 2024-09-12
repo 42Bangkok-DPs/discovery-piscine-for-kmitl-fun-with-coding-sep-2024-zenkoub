@@ -110,8 +110,8 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            opacity: 0.3; /* Adjust this value to control the opacity */
-            z-index: -1; /* Ensure it stays behind the content */
+            opacity: 0.3;
+            z-index: -1;
         }
         
         .block {
@@ -150,8 +150,8 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            opacity: 0.3; /* Adjust this value to control the opacity */
-            z-index: -1; /* Ensure it stays behind the content */
+            opacity: 0.3;
+            z-index: -1;
         }
         .contact {
             display: flex;
@@ -160,12 +160,14 @@
             justify-items: left;
             align-self: left;
             align-content: left;
-            gap: 40px;
+            gap: 30px;
+            font-size: 30px;
         }
         #contacttext {
             display: flex;
             align-self: center;
             color: black;
+            text-decoration: none;
         }
         
         @media only screen {
@@ -239,10 +241,10 @@
             <p>2nd Year Student</p>
             <p>School of Information Technology KMITL</p>
             <div class="contact" id="contact">
-                <a id="contacttext" href="https://www.instagram.com/zenkoub/">IG</a>
-                <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577">FB</a>
-                <a id="contacttext" href="https://github.com/zenkoub">github</a>
-                <a id="contacttext" href="mailto:66070024@kmitl.ac.th">Gmail</a>
+                <a id="contacttext" href="https://www.instagram.com/zenkoub/"><i class="fa-brands fa-instagram"></i></a>
+                <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577"><i class="fa-brands fa-facebook"></i></a>
+                <a id="contacttext" href="https://github.com/zenkoub"><i class="fa-brands fa-github"></i></a>
+                <a id="contacttext" href="mailto:66070024@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
             </div>
         </span>
     </div>
@@ -283,7 +285,6 @@
             }
         }
         window.addEventListener('resize', widthCheck);
-
         widthCheck();
     </script>
 

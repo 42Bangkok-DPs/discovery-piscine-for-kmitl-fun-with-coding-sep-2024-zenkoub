@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zen</title>
+    <title>kokritne</title>
     <script src="https://kit.fontawesome.com/64c9199a72.js" crossorigin="anonymous"></script>
     <style>
-        body {
+        html {
+            scroll-behavior: smooth;
+        }
+        body {  
             margin: 0;
             min-height: 200vh;
+            min-width: 320px;
+            padding-bottom: 100px;
             font-family: 'Courier New', Courier, monospace;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            background-image: url("./assetz/background.jpg");
         }
         .navbar {
             display: flex;
@@ -20,7 +31,10 @@
             height: 70px;
             background-color: rgb(0, 0, 0);
             justify-content: space-between;
-            z-index: 1;
+        }
+        .text-shadow {
+            color: white;
+            text-shadow: 5px 5px 8px rgba(217, 217, 217, 0.7);
         }
         #navtext {
             display: flex;
@@ -30,7 +44,6 @@
             text-decoration: none;
             transition: 0.5s;
             padding: 26px;
-            border-radius: 5px;
         }
         #navtext:hover {
             background-color: rgb(74, 74, 74);
@@ -49,7 +62,19 @@
             transition: 0.5s;
             padding-left: 28px;
             padding-right: 28px;
+        }
+        #contacttext {
+            color: black;
+            font-size: 25px;
+            transition: 0.5s;
+            padding-top: 5px;
+            padding-right: 4px;
+            padding-left: 4px;
             border-radius: 5px;
+        }
+        #contacttext:hover {
+            color: white;
+            background-color: black;
         }
         .home-icon:hover {
             background-color: rgb(74, 74, 74);
@@ -74,107 +99,150 @@
             display: none;
             color: white;
         }
+        .main-container {
+            display: flex;
+            color: black;
+            flex-direction: column;
+        }
+        .port-container {
+            display: flex;
+            margin-top: 80px;
+            background-color: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            scroll-margin-top: 80px;
+        }
         .header {
             text-align: left; 
-            margin-bottom: 45px;
+            margin-bottom: 25px;
             line-height: .5;
             margin-left: 30px;
             font-family:'Courier New', Courier, monospace;
             color:black;
         }
-        .skills {
-            display: block; 
-            font-family: 'Courier New', Courier, monospace;
-            margin: 20px;
-        }
-        .image1 {
+        .header img {
+            width: 300px;
             position: relative;
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            text-align: center;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .image1::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("assetz/background.jpg");
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0.3;
+            overflow: hidden;
+            height: 450px;
+            object-fit: cover;
             z-index: -1;
+            border-radius: 10px;
         }
-        .block {
+        .skill_issues {
+            background-image: url("./assetz/black.jpg");
             background-attachment: fixed;
             background-position: center;
+            background-repeat: no-repeat;
             background-size: cover;
-            min-height: 100vh;
-            width: 100%;
+            min-height: 40vh;
+            min-width: 100vw;
+            margin-top: 40px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            flex-direction: column;
+            scroll-margin-top: 70px;
+
+        }
+        .skill_container {
+            display: flex;
+            flex-direction: row;
+            gap: 70px;
+            margin-bottom: 50px;
+        }
+        .skill_container img{
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            box-shadow: 5px 5px 5px gray;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .skill_container a {
+            display: flex;
+            font-size: 1em;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            font-family: 'Courier New', Courier, monospace;
         }
-        .image2 {
+
+        .experience {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            width: 50vw;
             position: relative;
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            text-align: center;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
         }
-        
-        .image2::before {
-            content: "";
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            transition: opacity 1s;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
             width: 100%;
-            height: 100%;
-            background-image: url("assetz/background.jpg");
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0.3;
-            z-index: -1;
-        }
-        .contact {
             display: flex;
-            height: 70px;
-            justify-content: left;
-            justify-items: left;
-            align-self: left;
-            align-content: left;
-            gap: 30px;
-            font-size: 30px;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
-        #contacttext {
-            display: flex;
-            align-self: center;
-            color: black;
-            text-decoration: none;
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            padding-left: 10px;
+            margin-left: 12px;
+            margin-right: 10px;
+            padding-right: 12px;
+            cursor: pointer;
+            border-radius: 20%;
+            transition: 0.5s;
         }
-        
-        @media only screen {
-            .parallax {
-              background-attachment:fixed;
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+
+
+        @media screen and (max-width: 740px) {
+            .skill_container img{
+            width: 60px;
+            height: 60px;
             }
+            .skill_container a {
+            display: flex;
+            font-size: 0.8em;
+            flex-direction: column;
+            align-items: center;
+            }
+
         }
-        
         @media screen and (max-width: 640px) {
+            .skill_container img{
+                width: 60px;
+                height: 60px;
+            }
             .navtext-container {
                 display: none;
                 flex-direction: column;
@@ -195,88 +263,196 @@
                 background-color: black;
             }
 
+            .header img {
+                width: 50vw;
+                height: 50vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+
             #navtext {
                 border-radius: 0px;
                 padding-right: 70px;
+            }
+
+            .header {
+                font-size: 3vw;
+                
             }
             
             .hamburg {
                 display: block;
                 transition: 0.5s;
                 padding: 25px;
-                border-radius: 5px;
             }
 
             .hamburg:hover {
                 background-color: rgb(74, 74, 74);
-                
             }
         }
-        
+        @media screen and (max-width: 440px) {
+            .header img {
+                width: 50vw;
+                height: 35vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            .skill_container img{
+                width: 50px;
+                height: 50px;
+            }
+
+            .skill_container {
+                gap: 20px;
+            }
+        }
+        @media screen and (max-width: 240px) {
+            .header img {
+                width: 60vw;
+                height: 30vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <div class="navbar" id="navbar">
-        <a class="home-icon" href="https://www.google.co.th/">
-            <i class="fa-solid fa-house"></i>
-        </a>
-        <div class="hamburg" onclick="handleHamburger()">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="navtext-container" id="nav-menu">
-            <a id="navtext" href="#profile">Profile</a>
-            <a id="navtext" href="#skills">Skills</a>
-            <a id="navtext" href="#experience">Experience</a>
-        </div>
-    </div>
-
-    <div class="image1" id="profile">
-        <span class="header">
-            <h1 style="font-style: italic;">kokritne</h1>
-            <p>#funwithcodingsep2024</p>
-            <img src="assetz/profile.jpg" style="width: 370px;">
-            <h2>Koobun Kritnetithat</h2>
-            <p>2nd Year Student</p>
-            <p>School of Information Technology KMITL</p>
-            <div class="contact" id="contact">
-                <a id="contacttext" href="https://www.instagram.com/zenkoub/"><i class="fa-brands fa-instagram"></i></a>
-                <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577"><i class="fa-brands fa-facebook"></i></a>
-                <a id="contacttext" href="https://github.com/zenkoub"><i class="fa-brands fa-github"></i></a>
-                <a id="contacttext" href="mailto:66070024@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+    <div class="main-container">
+        <div class="navbar" id="navbar">
+            <a class="home-icon" href="https://www.google.co.th/">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <div class="hamburg" onclick="handleHamburger()">
+                <i class="fa-solid fa-bars"></i>
             </div>
-        </span>
-    </div>
-
-    <div class="block" id="skills">
-        <div class="skills">
-            <p>Skills</p>
-            <li>HTML</li>
-            <hr>
-            <li>CSS</li>
-            <hr>
-            <li>Python</li>
-            <hr>
-            <li>Java</li>
+            <div class="navtext-container" id="nav-menu">
+                <a id="navtext" href="#profile" onclick="handleHamburger()">Profile</a>
+                <a id="navtext" href="#skills" onclick="handleHamburger()">Skills</a>
+                <a id="navtext" href="#experience" onclick="handleHamburger()">Experience</a>
+            </div>
         </div>
-    </div>
 
-    <div class="image2" id="experience">
-        <p>Little bit about myself</p>
-    </div>
+        <div id="profile" class="port-container">
+            <div class="header">
+                <h1 style="font-style: italic;">kokritne</h1>
+                <p>#funwithcodingsep2024</p>
+                <img src="./assetz/profile.jpg">
+                <h1>Koobun Kritnetithat</h1>
+                <p>2nd Year Student</p>
+                <p>School of Information Technology KMITL</p>
+                <div class="contact" id="contact">
+                    <a id="contacttext" href="https://www.instagram.com/zenkoub/" style="padding-left: 5px; padding-right:5px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577"><i class="fa-brands fa-facebook"></i></a>
+                    <a id="contacttext" href="https://github.com/zenkoub"><i class="fa-brands fa-github"></i></a>
+                    <a id="contacttext" href="mailto:66070024@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+                </div>
+            </div>
+        </div>
 
+        <div id="skills" class="skill_issues">
+            <h1 class="text-shadow">SKILLS</h1>
+            <div class="skill_container">
+                <a style="width: 60px;"><img src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png">
+                    <span>JavaScript</span>
+                </a>
+                <a><img style="background-color: white;" src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+                    <span>HTML</span>
+                </a>
+                <a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJDwBd9LoQzBAZigXXxzQ0kKn6TwyrE0Y7Rg&s">
+                    <span>CSS</span>
+                </a>
+            </div>
+            <div class="skill_container">
+                <a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS25oYJlp2wL_GAT2FOKBaOlCt1fbn56-hXDg&s">
+                    <span>C</span>
+                </a>
+                <a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmoRHovHXQ5JdGdOdt8fbfwIiHKB-ws3C-A&s">
+                    <span>Java</span>
+                </a>
+                <a><img style="background-color: white;" src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=1920%2C1920&ssl=1">
+                    <span>Python</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="experience" class="experience">
+            <div class="exptext">
+                <h1 style="padding-top:50px;">Experience</h1>
+                <p style="padding-top:15px;">IT CAMP 20 @IT.KMITL</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlidesCamp">
+                        <div class="carousel-slide">
+                            <img src="./assetz/itcamp3.jpg" alt="Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/itcamp4.jpg" alt="Image 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/itcamp2.jpg" alt="Image 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/itcamp1.jpg" alt="Image 4">
+                        </div>
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="prev" onclick="moveSlideCamp(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlideCamp(1)">&#10095;</button>
+                    </div>
+                </div>
+        
+                <p style="padding-top:50px;">English Debate by OIA KMITL</p>
+        
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlidesDebate">
+                        <div class="carousel-slide">
+                            <img src="./assetz/debate2.jpg" alt="Imaged1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/debate4.jpg" alt="Imaged2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/debate1.jpg" alt="Imaged3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetz/debate3.jpg" alt="Imaged4">
+                        </div>
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="prev" onclick="moveSlideDebate(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlideDebate(1)">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+        
+    </div>
 </body>
-
+    
     <script>
         const menu = document.getElementById("nav-menu");
-
         function handleHamburger() {
             let screenWidth = window.innerWidth;
             if (screenWidth <= 640) {
                 menu.classList.toggle("active");
             }
         }
-
+        
         function widthCheck() {
             let screenWidth = window.innerWidth;
             if (screenWidth > 640) {
@@ -285,6 +461,55 @@
         }
         window.addEventListener('resize', widthCheck);
         widthCheck();
-    </script>
 
+        // Carousel
+        let currentIndexCamp = 0;
+        function showSlideCamp(index) {
+            const slidesCamp = document.querySelectorAll('#carouselSlidesCamp .carousel-slide');
+            const totalSlidesCamp = slidesCamp.length;
+
+            if (index >= totalSlidesCamp) {
+                currentIndexCamp = 0;
+            } else if (index < 0) {
+                currentIndexCamp = totalSlidesCamp - 1;
+            } else {
+                currentIndexCamp = index;
+            }
+
+            const offsetCamp = -currentIndexCamp * 100;
+            document.getElementById('carouselSlidesCamp').style.transform = `translateX(${offsetCamp}%)`;
+        }
+
+        function moveSlideCamp(step) {
+            document.getElementById('carouselSlidesCamp').style.transition = 'transform 0.5s ease-in-out';
+            showSlideCamp(currentIndexCamp + step);
+        }
+
+        showSlideCamp(currentIndexCamp);
+
+        let currentIndexDebate = 0;
+        function showSlideDebate(index) {
+            const slidesDebate = document.querySelectorAll('#carouselSlidesDebate .carousel-slide');
+            const totalSlidesDebate = slidesDebate.length;
+
+            if (index >= totalSlidesDebate) {
+                currentIndexDebate = 0;
+            } else if (index < 0) {
+                currentIndexDebate = totalSlidesDebate - 1;
+            } else {
+                currentIndexDebate = index;
+            }
+
+            const offsetDebate = -currentIndexDebate * 100;
+            document.getElementById('carouselSlidesDebate').style.transform = `translateX(${offsetDebate}%)`;
+        }
+
+        function moveSlideDebate(step) {
+            document.getElementById('carouselSlidesDebate').style.transition = 'transform 0.5s ease-in-out';
+            showSlideDebate(currentIndexDebate + step);
+        }
+
+        showSlideDebate(currentIndexDebate);
+      
+    </script>
 </html>

@@ -11,10 +11,11 @@
             scroll-behavior: smooth;
         }
         body {  
+            display: flex;
+            flex-direction: column;
             margin: 0;
-            min-height: 200vh;
+            min-height: 100vh;
             min-width: 320px;
-            padding-bottom: 100px;
             font-family: 'Courier New', Courier, monospace;
             background-attachment: fixed;
             background-position: center;
@@ -68,8 +69,8 @@
             font-size: 25px;
             transition: 0.5s;
             padding-top: 5px;
-            padding-right: 4px;
-            padding-left: 4px;
+            padding-right: 5px;
+            padding-left: 5px;
             border-radius: 5px;
         }
         #contacttext:hover {
@@ -223,8 +224,45 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
-
-
+        .contact-bar {
+            position: relative;
+            width: 100%;
+            height: 15vh;
+            background-color: rgb(30, 30, 30);
+            color: white;
+            display: flex;
+            justify-content: left;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items:left;
+            text-align: left;
+            gap: 7px;
+            padding-top: 15px;
+            padding-left: 40px;
+        }
+        
+        .contact-item {
+            margin: 5px 0; /* Margin for vertical spacing */
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
         @media screen and (max-width: 740px) {
             .skill_container img{
             width: 60px;
@@ -340,6 +378,7 @@
                 <a id="navtext" href="#profile" onclick="handleHamburger()">Profile</a>
                 <a id="navtext" href="#skills" onclick="handleHamburger()">Skills</a>
                 <a id="navtext" href="#experience" onclick="handleHamburger()">Experience</a>
+                <a id="navtext" href="#contact-bar" onclick="handleHamburger()">Contact</a>
             </div>
         </div>
 
@@ -352,7 +391,7 @@
                 <p>2nd Year Student</p>
                 <p>School of Information Technology KMITL</p>
                 <div class="contact" id="contact">
-                    <a id="contacttext" href="https://www.instagram.com/zenkoub/" style="padding-left: 5px; padding-right:5px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a id="contacttext" href="https://www.instagram.com/zenkoub/"><i class="fa-brands fa-instagram"></i></a>
                     <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577"><i class="fa-brands fa-facebook"></i></a>
                     <a id="contacttext" href="https://github.com/zenkoub"><i class="fa-brands fa-github"></i></a>
                     <a id="contacttext" href="mailto:66070024@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
@@ -363,7 +402,7 @@
         <div id="skills" class="skill_issues">
             <h1 class="text-shadow">SKILLS</h1>
             <div class="skill_container">
-                <a style="width: 60px;"><img src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png">
+                <a style="width: 80px;"><img src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png">
                     <span>JavaScript</span>
                 </a>
                 <a><img style="background-color: white;" src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
@@ -388,8 +427,8 @@
 
         <div id="experience" class="experience">
             <div class="exptext">
-                <h1 style="padding-top:50px;">Experience</h1>
-                <p style="padding-top:15px;">IT CAMP 20 @IT.KMITL</p>
+                <h1 style="padding-top:30px;">Experience</h1>
+                <p style="padding-top:10px;">IT CAMP 20 @IT.KMITL</p>
                 
                 <div class="carousel-container">
                     <div class="carousel-slides" id="carouselSlidesCamp">
@@ -412,7 +451,7 @@
                     </div>
                 </div>
         
-                <p style="padding-top:50px;">English Debate by OIA KMITL</p>
+                <p style="padding-top: 20px">English Debate by OIA KMITL</p>
         
                 <div class="carousel-container">
                     <div class="carousel-slides" id="carouselSlidesDebate">
@@ -436,11 +475,29 @@
                 </div>
             </div>
         </div>
-        
 
         
+            <div class="contact-bar" id="contact-bar">
+                <div class="container">
+                    <div class="contact-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/zenkoub/">zenkoub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <a href="https://www.facebook.com/profile.php?id=100006579403577">Zen Koobun</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/zenkoub">zenkoub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-at"></i>
+                        <a href="mailto:66070024@kmitl.ac.th">66070024@kmitl.ac.th</a>
+                    </div>
+                </div>
+            </div>
 
-        
     </div>
 </body>
     
